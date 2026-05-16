@@ -13,6 +13,7 @@
       --muted: #b3b3b3;
       --border: rgba(255,255,255,0.12);
       --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      font-size: 0.8em;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -31,6 +32,8 @@
       width: min(1140px, calc(100% - 2rem));
       margin: 0 auto;
       padding: 2rem 0 2.5rem;
+      opacity: 0;
+      animation: fadeInPage 0.9s ease-out 0.1s forwards;
     }
 
     header {
@@ -70,7 +73,7 @@
     }
 
     .hero-title {
-      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-size: clamp(2.25rem, 4.5vw, 4.05rem);
       line-height: 0.95;
       margin-bottom: 1rem;
       letter-spacing: -0.04em;
@@ -90,6 +93,8 @@
       background: rgba(255,255,255,0.03);
       box-shadow: 0 24px 40px rgba(0,0,0,0.18);
       margin-top: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease-out 0.2s forwards;
     }
 
     .card h3 {
@@ -98,12 +103,18 @@
     }
 
     .card img {
-      width: 726.93px;
-      height: 555.97px;
+      width: 357.12px;
+      height: 929.9px;
       object-fit: cover;
       border-radius: 20px;
       display: block;
       margin: 1rem auto;
+      max-width: 100%;
+    }
+
+    .hero-title {
+      opacity: 0;
+      animation: fadeUp 0.8s ease-out 0.15s forwards;
     }
 
     .button,
@@ -147,12 +158,106 @@
     }
 
     @media (max-width: 840px) {
-      header { flex-direction: column; align-items: flex-start; }
-      footer { flex-direction: column; }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+      .container {
+        padding: 1rem 1rem 1.5rem;
+      }
+      .hero {
+        padding: 1.5rem 0;
+      }
+      .hero-title {
+        font-size: clamp(1.9rem, 8vw, 3rem);
+      }
+      .hero-text {
+        max-width: 100%;
+      }
+      .card {
+        padding: 1.4rem;
+      }
+      .card img {
+        width: 100%;
+        height: auto;
+        max-width: 357.12px;
+      }
+      footer {
+        flex-direction: column;
+      }
     }
+
+    @keyframes fadeInPage {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .particle {
+      position: fixed;
+      width: 0.8rem;
+      height: 0.8rem;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: -1;
+      animation: float 12s infinite linear;
+      box-shadow: 0 0 20px rgba(255,255,255,0.08);
+      opacity: 0.9;
+    }
+
+    @keyframes float {
+      0% { transform: translate(0, 0) rotate(0deg); }
+      25% { transform: translate(100px, -50px) rotate(90deg); }
+      50% { transform: translate(-50px, 100px) rotate(180deg); }
+      75% { transform: translate(150px, 50px) rotate(270deg); }
+      100% { transform: translate(0, 0) rotate(360deg); }
+    }
+
+    .particle:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; }
+    .particle:nth-child(2) { left: 30%; top: 40%; animation-delay: 2s; }
+    .particle:nth-child(3) { left: 50%; top: 60%; animation-delay: 4s; }
+    .particle:nth-child(4) { left: 70%; top: 30%; animation-delay: 6s; }
+    .particle:nth-child(5) { left: 90%; top: 50%; animation-delay: 8s; }
+    .particle:nth-child(6) { left: 20%; top: 70%; animation-delay: 1s; }
+    .particle:nth-child(7) { left: 60%; top: 10%; animation-delay: 3s; }
+    .particle:nth-child(8) { left: 80%; top: 80%; animation-delay: 5s; }
+    .particle:nth-child(9) { left: 5%; top: 35%; animation-delay: 7s; }
+    .particle:nth-child(10) { left: 25%; top: 55%; animation-delay: 9s; }
+    .particle:nth-child(11) { left: 45%; top: 15%; animation-delay: 0.5s; }
+    .particle:nth-child(12) { left: 65%; top: 75%; animation-delay: 2.5s; }
   </style>
 </head>
 <body>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
   <div class="container">
     <header>
       <a class="brand" href="index.html">
@@ -170,7 +275,7 @@
       <p class="hero-text">Desain visual untuk platform media sosial Anda.</p>
       <article class="card">
         <h3>Portofolio Desain</h3>
-        <img src="https://f.top4top.io/p_3786dse2g1.png" alt="Portofolio Desain Sosial" />
+        <img src="https://h.top4top.io/p_37888ldes1.png" alt="Portofolio Desain Sosial" />
         <a href="index.html" class="button secondary">Kembali ke Beranda</a>
       </article>
     </section>
