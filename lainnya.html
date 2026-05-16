@@ -13,6 +13,7 @@
       --muted: #b3b3b3;
       --border: rgba(255,255,255,0.12);
       --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      font-size: 0.8em;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -31,6 +32,8 @@
       width: min(1140px, calc(100% - 2rem));
       margin: 0 auto;
       padding: 2rem 0 2.5rem;
+      opacity: 0;
+      animation: fadeInPage 0.9s ease-out 0.1s forwards;
     }
 
     header {
@@ -70,11 +73,13 @@
     }
 
     .hero-title {
-      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-size: clamp(2.25rem, 4.5vw, 4.05rem);
       line-height: 0.95;
       margin-bottom: 1rem;
       letter-spacing: -0.04em;
       color: var(--accent);
+      opacity: 0;
+      animation: fadeUp 0.8s ease-out 0.15s forwards;
     }
 
     .hero-text {
@@ -90,6 +95,8 @@
       background: rgba(255,255,255,0.03);
       box-shadow: 0 24px 40px rgba(0,0,0,0.18);
       margin-top: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease-out 0.2s forwards;
     }
 
     .card h3 {
@@ -98,12 +105,13 @@
     }
 
     .card img {
-      width: 584.58px;
-      height: 550.7px;
+      width: 284.89px;
+      height: 1117.23px;
       object-fit: cover;
       border-radius: 20px;
       display: block;
       margin: 1rem auto;
+      max-width: 100%;
     }
 
     .card p {
@@ -152,8 +160,56 @@
     }
 
     @media (max-width: 840px) {
-      header { flex-direction: column; align-items: flex-start; }
-      footer { flex-direction: column; }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+      .container {
+        padding: 1rem 1rem 1.5rem;
+      }
+      .hero {
+        padding: 1.5rem 0;
+      }
+      .hero-title {
+        font-size: clamp(1.9rem, 8vw, 3rem);
+      }
+      .hero-text {
+        max-width: 100%;
+      }
+      .card {
+        padding: 1.4rem;
+      }
+      .card img {
+        width: 100%;
+        height: auto;
+        max-width: 284.89px;
+      }
+      footer {
+        flex-direction: column;
+      }
+    }
+
+    @keyframes fadeInPage {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .particle {
@@ -220,7 +276,7 @@
       <p class="hero-text">Layanan desain tambahan untuk logo, splash screen, dan kebutuhan visual khusus yang tidak termasuk kategori standar.</p>
       <article class="card">
         <h3>Portofolio Desain</h3>
-        <img src="https://c.top4top.io/p_3787lt4ip1.png" alt="Portofolio Desain Lainnya" />
+        <img src="https://a.top4top.io/p_3788zfql21.png" alt="Portofolio Desain Lainnya" />
         <a href="index.html" class="button secondary">Kembali ke Beranda</a>
       </article>
     </section>
