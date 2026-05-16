@@ -11,7 +11,7 @@
       --fg: #f7f7f7;
       --accent: #ffffff;
       --muted: #b3b3b3;
-      --border: rgba(255,255,255,0.12);
+      --border: #ffffff;
       --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
       font-size: 0.8em;
     }
@@ -174,7 +174,7 @@
     .promo-card {
       padding: 1.2rem;
       border-radius: 24px;
-      border: 1px solid var(--border);
+      border: 1px solid #ffffff;
       background: rgba(255,255,255,0.03);
       box-shadow: 0 20px 30px rgba(0,0,0,0.16);
       text-align: center;
@@ -186,13 +186,13 @@
 
     .promo-card:hover {
       transform: translateY(-8px);
-      border-color: rgba(255,255,255,0.24);
+      border-color: #ffffff;
       box-shadow: 0 12px 24px rgba(255,255,255,0.1), 0 0 0 1px rgba(255,255,255,0.08);
       background: rgba(255,255,255,0.08);
     }
 
     .promo-card.popular {
-      border-color: var(--accent);
+      border-color: #ffffff;
       background: rgba(255,255,255,0.05);
     }
 
@@ -245,7 +245,7 @@
       padding: 0.85rem 1.5rem;
       border-radius: 999px;
       font-weight: 600;
-      border: 1px solid transparent;
+      border: 1px solid #ffffff;
       background: var(--accent);
       color: var(--bg);
       text-decoration: none;
@@ -265,7 +265,7 @@
       padding: 0.75rem 1.3rem;
       border-radius: 999px;
       font-weight: 600;
-      border: 1px solid rgba(255,255,255,0.18);
+      border: 1px solid #ffffff;
       background: transparent;
       color: var(--accent);
       text-decoration: none;
@@ -306,7 +306,7 @@
       padding: 0.85rem;
       border-radius: 18px;
       background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.06);
+      border: 1px solid #ffffff;
       text-align: left;
       opacity: 0;
       animation: fadeUp 0.75s ease-out 0.25s forwards;
@@ -315,7 +315,7 @@
 
     .offer-item:hover {
       transform: translateY(-6px);
-      border-color: rgba(255,255,255,0.22);
+      border-color: #ffffff;
       box-shadow: 0 20px 40px rgba(0,0,0,0.14), 0 0 0 1px rgba(255,255,255,0.05);
       background: rgba(255,255,255,0.08);
     }
@@ -335,7 +335,7 @@
     .offer-item .icon {
       width: 2rem;
       height: 2rem;
-      border: 2px solid var(--accent);
+      border: 2px solid #ffffff;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -359,7 +359,7 @@
 
     footer {
       padding-top: 1.5rem;
-      border-top: 1px solid var(--border);
+      border-top: 1px solid #ffffff;
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
@@ -433,10 +433,6 @@
       </nav>
     </header>
 
-    <div style="padding-top:0.8rem;">
-      <a href="index.html" class="back-button">Kembali ke Beranda</a>
-    </div>
-
     <section class="hero">
       <h1 class="hero-title">Penawaran Spesial</h1>
       <p class="hero-text">Dapatkan penawaran spesial dari kami untuk proyek desain pertama Anda.</p>
@@ -475,6 +471,10 @@
         </div>
       </div>
     </section>
+
+    <div style="padding-top:0.8rem; text-align:left;">
+      <a href="index.html" class="back-button">Kembali ke Beranda</a>
+    </div>
 
     <footer>
        <div>
