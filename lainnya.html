@@ -229,6 +229,46 @@
 
     @media (max-width: 840px) {
   header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  .brand {
+    flex-shrink: 0;
+  }
+
+  nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: auto; /* ini yang mendorong nav ke kanan */
+    width: auto !important;
+    flex-wrap: nowrap;
+    gap: 0.35rem;
+  }
+
+  nav a {
+    margin: 0;
+    padding: 0.4rem 0.7rem;
+    border: 1px solid #ffffff;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.05);
+    font-size: 0.75rem;
+    white-space: nowrap;
+  }
+
+  .container {
+    padding: 1rem 1rem 1.5rem;
+  }
+
+  footer {
+    flex-direction: column;
+  }
+}
+  header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
