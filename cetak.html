@@ -227,20 +227,26 @@
 
     @media (max-width: 480px) {
       .section-heading {
-        font-size: clamp(1.6rem, 7vw, 2.2rem);
+        font-size: clamp(1.8rem, 6vw, 2.4rem);
         gap: 0.6rem;
         margin-bottom: 0.9rem;
+        align-items: flex-start;
       }
 
       .section-heading::before {
-        width: 0.75rem;
-        height: 0.75rem;
-        min-width: 0.75rem;
+        width: 0.7rem;
+        height: 0.7rem;
+        min-width: 0.7rem;
+        margin-top: 0.15rem;
       }
 
-      /* Remove the long rule line on very small screens to prevent wrapping */
       .section-heading::after {
-        display: none;
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: rgb(255,255,255);
+        margin-left: 0.75rem;
+        align-self: center;
       }
 
       .hero-title {
