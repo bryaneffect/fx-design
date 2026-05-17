@@ -88,15 +88,20 @@
     }
 
     nav a {
-      color: var(--muted);
-      text-decoration: none;
-      margin-left: 1rem;
-      transition: color 0.2s ease;
-    }
+  color: var(--muted);
+  text-decoration: none;
+  margin-left: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ffffff;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.05);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
 
     nav a:hover {
-      color: var(--accent);
-    }
+  color: var(--accent);
+  transform: translateY(-2px);
+}
 
     .hero {
       display: grid;
