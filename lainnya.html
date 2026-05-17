@@ -88,16 +88,23 @@
     }
 
     nav {
-      display: inline-flex;
-      align-items: center;
-      gap: 1rem;
-      margin-left: auto;
+      display: flex;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      width: auto;
     }
 
     nav a {
       color: var(--muted);
       text-decoration: none;
-      transition: color 0.2s ease;
+      margin: 0;
+      padding: 0.5rem 1rem;
+      border: 1px solid #ffffff;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      font-size: 0.85rem;
+      transition: color 0.2s ease, background-color 0.2s ease;
     }
 
     nav a:hover {
