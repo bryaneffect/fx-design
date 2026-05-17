@@ -87,10 +87,16 @@
       width: auto;
     }
 
+    nav {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      margin-left: auto;
+    }
+
     nav a {
       color: var(--muted);
       text-decoration: none;
-      margin-left: 1rem;
       transition: color 0.2s ease;
     }
 
@@ -228,99 +234,6 @@
     }
 
     @media (max-width: 840px) {
-  header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: nowrap;
-  }
-
-  .brand {
-    flex-shrink: 0;
-  }
-
-  nav {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-left: auto; /* ini yang mendorong nav ke kanan */
-    width: auto !important;
-    flex-wrap: nowrap;
-    gap: 0.35rem;
-  }
-
-  nav a {
-    margin: 0;
-    padding: 0.4rem 0.7rem;
-    border: 1px solid #ffffff;
-    border-radius: 999px;
-    background: rgba(255,255,255,0.05);
-    font-size: 0.75rem;
-    white-space: nowrap;
-  }
-
-  .container {
-    padding: 1rem 1rem 1.5rem;
-  }
-
-  footer {
-    flex-direction: column;
-  }
-}
-  header {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  nav {
-    display: flex;
-    justify-content: flex-end;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    width: auto;
-  }
-
-  nav a {
-    margin: 0;
-    padding: 0.45rem 0.8rem;
-    border: 1px solid #ffffff;
-    border-radius: 999px;
-    background: rgba(255,255,255,0.05);
-    font-size: 0.8rem;
-  }
-
-  .container {
-    padding: 1rem 1rem 1.5rem;
-  }
-
-  .hero {
-    padding: 1.5rem 0;
-  }
-
-  .hero-title {
-    font-size: clamp(1.9rem, 8vw, 3rem);
-  }
-
-  .hero-text {
-    max-width: 100%;
-  }
-
-  .card {
-    padding: 1.4rem;
-  }
-
-  .card img {
-    width: 100%;
-    height: auto;
-    max-width: 284.89px;
-  }
-
-  footer {
-    flex-direction: column;
-  }
       header {
         flex-direction: column;
         align-items: flex-start;
