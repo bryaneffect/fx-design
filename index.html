@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FX.DESIGN - Desain untuk kebutuhan bisnis Anda</title>
+  <title>bryfx - commission design</title>
   <style>
     :root {
       color-scheme: dark;
@@ -414,13 +414,43 @@
     }
 
     .card span {
-      display: inline-flex;
-      padding: 0.5rem 0.8rem;
-      border-radius: 999px;
-      border: 1px solid #ffffff;
-      color: var(--accent);
-      font-size: 0.85rem;
-    }
+  display: inline-flex;
+  padding: 0.5rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid #ffffff;
+  color: var(--accent);
+  font-size: 0.85rem;
+  margin-top: 1.2rem;
+}
+    .info-card {
+  min-height: auto;
+}
+
+.info-list {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.info-item {
+  padding: 1rem;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.03);
+}
+
+.info-item strong {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.92rem;
+}
+
+.info-item p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
 
     .card .button {
       margin-top: 1.2rem;
@@ -556,19 +586,14 @@
   <div class="container">
     <header>
       <a class="brand" href="#">
-        <img src="https://h.top4top.io/p_3761gvfn21.png" alt="logo" class="brand-logo" />
+        <img src="https://g.top4top.io/p_380164g991.png" alt="logo" class="brand-logo" />
       </a>
-      <nav>
-        <a href="#services">Layanan</a>
-        <a href="#portfolio">Portofolio</a>
-        <a href="#contact">Kontak</a>
-      </nav>
     </header>
 
     <section class="hero">
       <div>
-        <h1 class="hero-title">Jasa Desain <strong>Murah&Cepat</strong> untuk Kebutuhan UMKM Anda</h1>
-        <p class="hero-text">Buat pengalaman visual dengan kebutuhan anda, Kami siap membantu anda menciptakan desain untuk memenuhi kebutuhan UMKM Anda. Harga terjangkau dan hasil berkualitas.</p>
+        <h1 class="hero-title">Jasa Desain <strong>Murah&Cepat</strong> untuk Kebutuhan Anda</h1>
+        <p class="hero-text">Buat pengalaman visual dengan kebutuhan anda, Kami siap membantu anda menciptakan desain untuk memenuhi kebutuhan Anda. Harga terjangkau dan hasil berkualitas.</p>
         <div class="buttons">
           <a href="penawaran.html" class="button">Lihat Penawaran</a>
           <a href="#services" class="button secondary">Lihat Layanan</a>
@@ -598,13 +623,6 @@
           </div>
         </div>
       </aside>
-    </section>
-
-    <section id="about" class="section">
-      <h2 class="section-heading">Apa itu FX.DESIGN</h2>
-      <article class="card" style="min-height: auto;">
-        <p style="margin: 0; color: var(--muted); font-size: 1.17rem; line-height: 1.9;">FX.DESIGN adalah layanan desain grafis untuk membantu UMKM dan bisnis modern menampilkan pesan, brand, dan produk dengan tampilan profesional. Kami menyediakan desain media sosial, media cetak, identitas brand, hingga UI digital yang disesuaikan dengan kebutuhan pasar Anda.</p>
-      </article>
     </section>
 
     <section id="services" class="section">
@@ -639,18 +657,7 @@
         </article>
       </div>
     </section>
-    <section id="services" class="section">
-      <div class="cards">
-        <article class="card">
-          <h4>Informasi</h4>
-          <p>Harga dapat berubah tergantung pada tingkat kesulitan dan waktu pengerjaan desain.
-            Estimasi waktu pengerjaan dapat bervariasi tergantung pada kompleksitas proyek dan jumlah revisi yang dikerahkan.</p>
-          </p>
-          <span>Information</span>
-        </article>
-      </div>
-    </section>
-
+    
     <section id="portfolio" class="section">
       <h2 class="section-heading">Portofolio</h2>
       <div class="cards">
@@ -676,6 +683,42 @@
     </section>
 
     <section id="contact-order" class="section">
+      <section id="services" class="section">
+    <div class="cards">
+      <article class="card info-card">
+       <h4>Informasi</h4>
+
+      <div class="info-list">
+        <div class="info-item">
+          <strong>Harga Fleksibel</strong>
+          <p>
+            Harga dapat berubah tergantung tingkat kesulitan desain
+            dan detail permintaan.
+          </p>
+        </div>
+
+        <div class="info-item">
+          <strong>Estimasi Pengerjaan</strong>
+          <p>
+            Waktu pengerjaan menyesuaikan kompleksitas proyek
+            dan jumlah revisi.
+          </p>
+        </div>
+
+        <div class="info-item">
+          <strong>Revisi Desain</strong>
+          <p>
+            Revisi tersedia untuk memastikan hasil sesuai
+            kebutuhan Anda.
+          </p>
+        </div>
+      </div>
+
+
+      <span>Information</span>
+    </article>
+  </div>
+</section>
       <h2 class="section-heading">Pemesanan</h2>
       <div class="cards">
         <article class="card">
@@ -705,13 +748,13 @@
 
     <footer id="contact">
       <div>
-        <strong>FX.DESIGN</strong>
-        <p>Effect to FX</p>
-        <p>Copyright © 2026 FX.DESIGN. All rights reserved.</p>
+        <strong>bryfx.intsomnia</strong>
+        <p>Stay Awake</p>
+        <p>Copyright © 2026 bryfx.intsomnia. All rights reserved.</p>
       </div>
       <div>
-        <p>Instagram: @fx.design0</p>
-        <p>Tiktok: @fx.design0</p>
+        <p>Instagram: @bryfx.intsomnia</p>
+        <p>Tiktok: @bryfx.intsomnia</p>
         <p>Whats App: +62 895 3830 98720</p>
       </div>
     </footer>
