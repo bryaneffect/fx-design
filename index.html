@@ -743,6 +743,58 @@
     font-size: 0.78rem;
   }
 }
+/* Background khusus HP */
+@media (max-width: 768px) {
+
+  body {
+    background:
+      radial-gradient(
+        circle at 70% 0%,
+        rgba(72,255,0,0.18) 0%,
+        rgba(27,160,0,0.08) 18%,
+        transparent 35%
+      ),
+
+      radial-gradient(
+        circle at 20% 45%,
+        rgba(72,255,0,0.08) 0%,
+        transparent 28%
+      ),
+
+      radial-gradient(
+        circle at 50% 100%,
+        rgba(72,255,0,0.10) 0%,
+        transparent 40%
+      ),
+
+      linear-gradient(
+        180deg,
+        #1a1a22 0%,
+        #12131a 30%,
+        #0a0b12 70%,
+        #05060b 100%
+      );
+  }
+
+  body::after{
+    width: 450px;
+    height: 450px;
+    top: -180px;
+    filter: blur(60px);
+    opacity: .7;
+  }
+
+  body::before{
+    background:
+      repeating-linear-gradient(
+        90deg,
+        rgba(255,255,255,0.02) 0px,
+        rgba(255,255,255,0.02) 1px,
+        transparent 1px,
+        transparent 24px
+      );
+  }
+}
   </style>
 </head>
 <body>
