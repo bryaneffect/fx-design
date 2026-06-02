@@ -10,6 +10,7 @@
       --bg: #000;
       --fg: #f7f7f7;
       --accent: #ffffff;
+      --green: #99FF00;
       --muted: #b3b3b3;
       --border: #ffffff;
       --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
@@ -27,14 +28,107 @@
     }
 
     body {
-      min-height: 100vh;
-      font-family: Inter, system-ui, sans-serif;
-      background: radial-gradient(circle at top, rgba(255,255,255,0.08), transparent 35%),
-                  radial-gradient(circle at 20% 20%, rgba(255,255,255,0.05), transparent 25%),
-                  var(--bg);
-      color: var(--fg);
-      line-height: 1.6;
-    }
+  min-height: 100vh;
+  font-family: Inter, system-ui, sans-serif;
+  color: var(--fg);
+  line-height: 1.6;
+
+  background:
+    radial-gradient(
+      circle at 75% 0%,
+      rgba(72, 255, 0, 0.35) 0%,
+      rgba(27, 160, 0, 0.15) 20%,
+      transparent 45%
+    ),
+
+    radial-gradient(
+      circle at 50% -20%,
+      rgba(30, 255, 0, 0.12) 0%,
+      transparent 40%
+    ),
+
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(72, 255, 0, 0.12) 0%,
+      transparent 35%
+    ),
+
+    radial-gradient(
+      circle at 80% 60%,
+      rgba(72, 255, 0, 0.10) 0%,
+      transparent 40%
+    ),
+
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(72, 255, 0, 0.18) 0%,
+      rgba(27, 160, 0, 0.08) 25%,
+      transparent 55%
+    ),
+
+    linear-gradient(
+      180deg,
+      #1a1a22 0%,
+      #12131a 25%,
+      #0a0b12 60%,
+      #05060b 100%
+    );
+
+  background-attachment: scroll;
+  position: relative;
+}
+body::after {
+  content: "";
+  position: absolute;
+  top: -300px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 900px;
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(60, 255, 0, 0.15) 0%,
+      rgba(0, 168, 8, 0.08) 30%,
+      transparent 70%
+    );
+
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: -3;
+}
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(255,255,255,0.03) 0px,
+      rgba(255,255,255,0.03) 1px,
+      transparent 1px,
+      transparent 32px
+    );
+
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.8),
+    transparent 60%
+  );
+
+  z-index: -2;
+}
+.green {
+  color: var(--green);
+  text-shadow:
+    0 0 5px rgba(153,255,0,.8),
+    0 0 15px rgba(153,255,0,.5),
+    0 0 30px rgba(153,255,0,.3);
+}
 
     @keyframes fadeInPage {
       from {
@@ -280,8 +374,9 @@
     }
 
     .offers-section {
-      padding: 1.8rem 0;
+     padding: 1.8rem 0;
       text-align: center;
+     margin-bottom: 2rem;
     }
 
     .offers-heading {
@@ -413,7 +508,9 @@
         width: 2.4rem;
         height: 2.4rem;
       }
-
+      .offers-title {
+       margin-bottom: 3rem;
+}
       footer {
         flex-direction: column;
       }
@@ -424,17 +521,21 @@
   <div class="container">
     <header>
       <a class="brand" href="index.html">
-        <img src="https://g.top4top.io/p_380164g991.png" alt="logo with name" class="brand-logo" />
+        <img src="https://j.top4top.io/p_3804vcmlb1.png" alt="logo with name" class="brand-logo" />
       </a>
     </header>
 
     <section class="hero">
-      <h1 class="hero-title">Penawaran Spesial</h1>
+      <h1 class="hero-title">
+  Penawaran <span class="green">Spesial</span>
+</h1>
       <p class="hero-text">Dapatkan penawaran spesial dari kami untuk proyek desain pertama Anda.</p>
     </section>
 
     <section class="section offers-section">
-      <h2 class="section-heading">Penawaran Pengguna Pertama</h2>
+      <h2 class="hero-title offers-title">
+  Penawaran <span class="green">Pengguna Pertama</span>
+</h2>
       <div class="offers-list">
         <div class="offer-item">
           <div class="icon">1</div>
@@ -467,8 +568,10 @@
       </div>
     </section>
 
-    <div style="padding-top:0.8rem; text-align:left;">
-      <a href="index.html" class="back-button">Kembali ke Beranda</a>
+    <div style="padding-top:0.8rem; padding-bottom:3rem; text-align:left;">
+      <a href="index.html" class="back-button">
+  Kembali ke <span class="green">Beranda</span>
+</a>
     </div>
 
     <footer id="contact">
