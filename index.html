@@ -607,6 +607,142 @@
 
   z-index: -2;
 }
+/* =========================
+   MOBILE OPTIMIZATION
+========================= */
+@media (max-width: 768px) {
+
+  :root{
+    font-size: 0.95em;
+  }
+
+  .container{
+    width: calc(100% - 1.2rem);
+    padding-top: 1rem;
+  }
+
+  .brand-logo{
+    max-height: 2rem;
+  }
+
+  .hero{
+    padding: 2rem 0;
+    gap: 1.5rem;
+  }
+
+  .hero-title{
+    font-size: 2.2rem;
+    line-height: 1.05;
+  }
+
+  .hero-text{
+    font-size: 0.9rem;
+  }
+
+  .buttons{
+    flex-direction: column;
+  }
+
+  .buttons .button,
+  .buttons .button.secondary{
+    width: 100%;
+  }
+
+  .hero-panel{
+    padding: 1rem;
+  }
+
+  .service-item{
+    padding: 0.8rem;
+  }
+
+  .section{
+    padding: 2rem 0;
+  }
+
+  .section-heading{
+    font-size: 2rem;
+    gap: 0.6rem;
+  }
+
+  .section-heading::before{
+    width: 0.7rem;
+    height: 0.7rem;
+    min-width: 0.7rem;
+  }
+
+  .cards{
+    grid-template-columns: 1fr;
+  }
+
+  /* layanan */
+  .card.horizontal{
+    flex-direction: column;
+    text-align: left;
+    min-height: auto;
+  }
+
+  .card.horizontal img{
+    width: 100%;
+    height: auto;
+    max-height: 220px;
+    object-fit: cover;
+  }
+
+  .card{
+    padding: 1rem;
+    min-height: auto;
+  }
+
+  .info-item{
+    padding: 0.85rem;
+  }
+
+  footer{
+    text-align: center;
+  }
+
+  .whatsapp-chat-button{
+    width: 3.2rem;
+    height: 3.2rem;
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .whatsapp-popup{
+    border-radius: 22px;
+    padding: 1.2rem;
+  }
+}
+
+/* HP kecil */
+@media (max-width: 480px){
+
+  .hero-title{
+    font-size: 1.8rem;
+  }
+
+  .section-heading{
+    font-size: 1.7rem;
+  }
+
+  nav a{
+    padding: 0.45rem 0.8rem;
+    font-size: 0.8rem;
+  }
+
+  .card h4{
+    font-size: 0.95rem;
+  }
+
+  .card p{
+    font-size: 0.82rem;
+  }
+
+  .card span{
+    font-size: 0.78rem;
+  }
+}
   </style>
 </head>
 <body>
@@ -672,7 +808,7 @@
             <p>Ex. Feed Instagram, Banner YouTube, etc.</p>
             <span>Start from Rp.15.000</span>
           </div>
-          <img src="https://a.top4top.io/p_3762mg07z2.png" alt="Contoh desain media sosial" />
+          <img src="https://d.top4top.io/p_3804jtzhe1.png" alt="Contoh desain media sosial" />
         </article>
         <article class="card horizontal">
           <div class="card-copy">
