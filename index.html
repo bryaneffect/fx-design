@@ -3,16 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>bryfx - commission design</title>
+  <title>bryfx.int - commission design</title>
   <style>
     :root {
       color-scheme: dark;
       --bg: #000;
       --fg: #f7f7f7;
       --accent: #ffffff;
+      --green: #99FF00;
       --muted: #b3b3b3;
       --border: #ffffff;
       --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      
       font-size: 0.8em;
     }
 
@@ -27,15 +29,81 @@
     }
 
     body {
-      min-height: 100vh;
-      font-family: Inter, system-ui, sans-serif;
-      background: radial-gradient(circle at top, rgba(255,255,255,0.08), transparent 35%),
-                  radial-gradient(circle at 20% 20%, rgba(255,255,255,0.05), transparent 25%),
-                  var(--bg);
-      color: var(--fg);
-      line-height: 1.6;
-    }
+  min-height: 100vh;
+  font-family: Inter, system-ui, sans-serif;
+  color: var(--fg);
+  line-height: 1.6;
 
+  background:
+    /* Atas */
+    radial-gradient(
+      circle at 75% 0%,
+      rgba(72, 255, 0, 0.35) 0%,
+      rgba(27, 160, 0, 0.15) 20%,
+      transparent 45%
+    ),
+
+    radial-gradient(
+      circle at 50% -20%,
+      rgba(30, 255, 0, 0.12) 0%,
+      transparent 40%
+    ),
+
+    /* Tengah */
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(72, 255, 0, 0.12) 0%,
+      transparent 35%
+    ),
+
+    radial-gradient(
+      circle at 80% 60%,
+      rgba(72, 255, 0, 0.10) 0%,
+      transparent 40%
+    ),
+
+    /* Bawah */
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(72, 255, 0, 0.18) 0%,
+      rgba(27, 160, 0, 0.08) 25%,
+      transparent 55%
+    ),
+
+    linear-gradient(
+      180deg,
+      #1a1a22 0%,
+      #12131a 25%,
+      #0a0b12 60%,
+      #05060b 100%
+    );
+
+  background-attachment: scroll;
+}
+  
+
+  body::after {
+  content: "";
+  position: absolute;
+  top: -300px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 900px;
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(60, 255, 0, 0.15) 0%,
+      rgba(0, 168, 8, 0.08) 30%,
+      transparent 70%
+    );
+
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: -3;
+}
     @keyframes fadeInPage {
       from {
         opacity: 0;
@@ -122,7 +190,11 @@
       color: var(--accent);
       font-weight: 800;
     }
-
+.green {
+  color: var(--green);
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(153,255,0,0.4);
+}
     .hero-text {
       max-width: 42rem;
       color: var(--muted);
@@ -501,19 +573,7 @@
   footer {
     flex-direction: column;
   }
-}
 
-    .particle {
-      position: fixed;
-      width: 0.8rem;
-      height: 0.8rem;
-      background: rgba(255, 255, 255, 0.12);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: -1;
-      animation: float 12s infinite linear;
-      box-shadow: 0 0 20px rgba(255,255,255,0.08);
-      opacity: 0.9;
     }
 
     @keyframes float {
@@ -524,30 +584,29 @@
       100% { transform: translate(0, 0) rotate(360deg); }
     }
 
-    .particle:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; }
-    .particle:nth-child(2) { left: 30%; top: 40%; animation-delay: 2s; }
-    .particle:nth-child(3) { left: 50%; top: 60%; animation-delay: 4s; }
-    .particle:nth-child(4) { left: 70%; top: 30%; animation-delay: 6s; }
-    .particle:nth-child(5) { left: 90%; top: 50%; animation-delay: 8s; }
-    .particle:nth-child(6) { left: 20%; top: 70%; animation-delay: 1s; }
-    .particle:nth-child(7) { left: 60%; top: 10%; animation-delay: 3s; }
-    .particle:nth-child(8) { left: 80%; top: 80%; animation-delay: 5s; }
-    .particle:nth-child(9) { left: 5%; top: 35%; animation-delay: 7s; }
-    .particle:nth-child(10) { left: 25%; top: 55%; animation-delay: 9s; }
-    .particle:nth-child(11) { left: 45%; top: 15%; animation-delay: 0.5s; }
-    .particle:nth-child(12) { left: 65%; top: 75%; animation-delay: 2.5s; }
-    .particle:nth-child(13) { left: 85%; top: 25%; animation-delay: 4.5s; }
-    .particle:nth-child(14) { left: 15%; top: 85%; animation-delay: 6.5s; }
-    .particle:nth-child(15) { left: 35%; top: 5%; animation-delay: 8.5s; }
-    .particle:nth-child(16) { left: 55%; top: 65%; animation-delay: 1.5s; }
-    .particle:nth-child(17) { left: 75%; top: 45%; animation-delay: 3.5s; }
-    .particle:nth-child(18) { left: 95%; top: 95%; animation-delay: 5.5s; }
-    .particle:nth-child(19) { left: 40%; top: 90%; animation-delay: 7.5s; }
-    .particle:nth-child(20) { left: 60%; top: 20%; animation-delay: 9.5s; }
-    .particle:nth-child(21) { left: 10%; top: 50%; animation-delay: 0.8s; }
-    .particle:nth-child(22) { left: 30%; top: 80%; animation-delay: 2.8s; }
-    .particle:nth-child(23) { left: 50%; top: 30%; animation-delay: 4.8s; }
-    .particle:nth-child(24) { left: 70%; top: 60%; animation-delay: 6.8s; }
+    body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(255,255,255,0.03) 0px,
+      rgba(255,255,255,0.03) 1px,
+      transparent 1px,
+      transparent 32px
+    );
+
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.8),
+    transparent 60%
+  );
+
+  z-index: -2;
+}
   </style>
 </head>
 <body>
@@ -559,40 +618,18 @@
       <a href="https://wa.me/62895383098720" class="button" target="_blank" rel="noopener noreferrer">Chat WhatsApp</a>
     </div>
   </div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
   <div class="container">
     <header>
       <a class="brand" href="#">
-        <img src="https://g.top4top.io/p_380164g991.png" alt="logo" class="brand-logo" />
+        <img src="https://k.top4top.io/p_3804g8qes1.png" alt="logo" class="brand-logo" />
       </a>
     </header>
 
     <section class="hero">
       <div>
-        <h1 class="hero-title">Jasa Desain <strong>Murah&Cepat</strong> untuk Kebutuhan Anda</h1>
+        <h1 class="hero-title">
+  Jasa Desain <span class="green">Murah&Cepat</span> untuk Kebutuhan Anda
+</h1>
         <p class="hero-text">Buat pengalaman visual dengan kebutuhan anda, Kami siap membantu anda menciptakan desain untuk memenuhi kebutuhan Anda. Harga terjangkau dan hasil berkualitas.</p>
         <div class="buttons">
           <a href="penawaran.html" class="button">Lihat Penawaran</a>
@@ -605,19 +642,19 @@
         <div class="service-list">
           <div class="service-item">
             <div>
-              <strong>Harga Terjangkau</strong>
+              <strong class="green">Harga Terjangkau</strong>
               <p>Kami menawarkan layanan desain dengan harga yang kompetitif tanpa mengorbankan kualitas.</p>
             </div>
           </div>
           <div class="service-item">
             <div>
-              <strong>Estimasi Cepat</strong>
+              <strong class="green">Estimasi Cepat</strong>
               <p>Kami memberikan estimasi waktu yang akurat dan memenuhi tenggat waktu yang ditentukan.</p>
             </div>
           </div>
           <div class="service-item">
             <div>
-              <strong>Kebutuhan Bisnis</strong>
+              <strong class="green">Kebutuhan Bisnis</strong>
               <p>Kami memahami kebutuhan bisnis Anda dan menyediakan solusi desain yang sesuai.</p>
             </div>
           </div>
@@ -626,7 +663,7 @@
     </section>
 
     <section id="services" class="section">
-      <h2 class="section-heading">Layanan</h2>
+      <h2 class="section-heading"><strong class="green">Layanan</strong></h2>
       <div class="cards">
         <article class="card horizontal">
           <div class="card-copy">
@@ -659,7 +696,7 @@
     </section>
     
     <section id="portfolio" class="section">
-      <h2 class="section-heading">Portofolio</h2>
+      <h2 class="section-heading"><strong class="green">Portofolio</strong></h2>
       <div class="cards">
         <article class="card">
           <h4>Desain Media Sosial</h4>
@@ -690,7 +727,7 @@
 
       <div class="info-list">
         <div class="info-item">
-          <strong>Harga Fleksibel</strong>
+          <strong class="green">Harga Fleksibel</strong>
           <p>
             Harga dapat berubah tergantung tingkat kesulitan desain
             dan detail permintaan.
@@ -698,7 +735,7 @@
         </div>
 
         <div class="info-item">
-          <strong>Estimasi Pengerjaan</strong>
+          <strong class="green">Estimasi Pengerjaan</strong>
           <p>
             Waktu pengerjaan menyesuaikan kompleksitas proyek
             dan jumlah revisi.
@@ -706,7 +743,7 @@
         </div>
 
         <div class="info-item">
-          <strong>Revisi Desain</strong>
+          <strong class="green">Revisi Desain</strong>
           <p>
             Revisi tersedia untuk memastikan hasil sesuai
             kebutuhan Anda.
@@ -715,19 +752,19 @@
       </div>
 
 
-      <span>Information</span>
+      <span class="green">Information</span>
     </article>
   </div>
 </section>
-      <h2 class="section-heading">Pemesanan</h2>
+      <h2 class="section-heading"><strong class="green">Pemesanan</strong></h2>
       <div class="cards">
         <article class="card">
           <h4>Hubungi Kami</h4>
           <p>Kami siap membantu Anda dengan kebutuhan desain. Hubungi kami untuk konsultasi gratis dan diskusi proyek.</p>
           <div style="margin-top: 1rem;">
             <p style="margin-bottom: 0.5rem;"><strong>WhatsApp:</strong> +62 895 3830 98720</p>
-            <p style="margin-bottom: 0.5rem;"><strong>Instagram:</strong> @fx.design0</p>
-            <p style="margin-bottom: 0.5rem;"><strong>TikTok:</strong> @fx.design0</p>
+            <p style="margin-bottom: 0.5rem;"><strong>Instagram:</strong> @bryfx.intsomnia</p>
+            <p style="margin-bottom: 0.5rem;"><strong>TikTok:</strong> @bryfx.intsomnia</p>
           </div>
           <button type="button" class="button" id="whatsappOpen">Pesan Sekarang</button>
         </article>
