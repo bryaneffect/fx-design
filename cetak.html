@@ -3,29 +3,127 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Desain Media Cetak - bryfx</title>
+  <title>bryfx.int - commission design</title>
   <style>
     :root {
       color-scheme: dark;
       --bg: #000;
       --fg: #f7f7f7;
       --accent: #ffffff;
+      --green: #99FF00;
       --muted: #b3b3b3;
       --border: #ffffff;
       --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      
       font-size: 0.8em;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      min-height: 100vh;
-      font-family: Inter, system-ui, sans-serif;
-      background: radial-gradient(circle at top, rgba(255,255,255,0.08), transparent 35%),
-                  radial-gradient(circle at 20% 20%, rgba(255,255,255,0.05), transparent 25%),
-                  var(--bg);
-      color: var(--fg);
-      line-height: 1.6;
+  min-height: 100vh;
+  font-family: Inter, system-ui, sans-serif;
+  color: var(--fg);
+  line-height: 1.6;
+
+  background:
+    /* Atas */
+    radial-gradient(
+      circle at 75% 0%,
+      rgba(72, 255, 0, 0.35) 0%,
+      rgba(27, 160, 0, 0.15) 20%,
+      transparent 45%
+    ),
+
+    radial-gradient(
+      circle at 50% -20%,
+      rgba(30, 255, 0, 0.12) 0%,
+      transparent 40%
+    ),
+
+    /* Tengah */
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(72, 255, 0, 0.12) 0%,
+      transparent 35%
+    ),
+
+    radial-gradient(
+      circle at 80% 60%,
+      rgba(72, 255, 0, 0.10) 0%,
+      transparent 40%
+    ),
+
+    /* Bawah */
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(72, 255, 0, 0.18) 0%,
+      rgba(27, 160, 0, 0.08) 25%,
+      transparent 55%
+    ),
+
+    linear-gradient(
+      180deg,
+      #1a1a22 0%,
+      #12131a 25%,
+      #0a0b12 60%,
+      #05060b 100%
+    );
+
+  background-attachment: scroll;
+}
+  
+
+  body::after {
+  content: "";
+  position: absolute;
+  top: -300px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 900px;
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(60, 255, 0, 0.15) 0%,
+      rgba(0, 168, 8, 0.08) 30%,
+      transparent 70%
+    );
+
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: -3;
+}
+    @keyframes fadeInPage {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .container {
@@ -58,17 +156,26 @@
     }
 
     nav a {
-      color: var(--muted);
-      text-decoration: none;
-      margin-left: 1rem;
-      transition: color 0.2s ease;
-    }
+   color: var(--muted);
+   text-decoration: none;
+   margin-left: 0.5rem;
+   padding: 0.5rem 1rem;
+   border: 1px solid #ffffff;
+   border-radius: 999px;
+   background: rgba(255,255,255,0.05);
+   transition: color 0.2s ease, transform 0.2s ease;
+}
 
     nav a:hover {
-      color: var(--accent);
-    }
+  color: var(--accent);
+  transform: translateY(-2px);
+}
 
     .hero {
+      display: grid;
+      grid-template-columns: 1fr minmax(320px, 420px);
+      gap: 1.2rem;
+      align-items: center;
       padding: 2.5rem 0;
     }
 
@@ -77,14 +184,195 @@
       line-height: 0.95;
       margin-bottom: 1rem;
       letter-spacing: -0.04em;
-      opacity: 0;
-      animation: fadeUp 0.8s ease-out 0.15s forwards;
     }
 
+    .hero-title strong {
+      color: var(--accent);
+      font-weight: 800;
+    }
+.green {
+  color: var(--green);
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(153,255,0,0.4);
+}
     .hero-text {
       max-width: 42rem;
       color: var(--muted);
       margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .button,
+    .button.secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.85rem 1.5rem;
+      border-radius: 999px;
+      font-weight: 600;
+      border: 1px solid transparent;
+      transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+      text-decoration: none;
+    }
+
+    .button {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--fg);
+      border-color: #ffffff;
+    }
+
+    .whatsapp-popup-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 30;
+      padding: 1rem;
+    }
+
+    .whatsapp-popup-overlay.active {
+      display: flex;
+    }
+
+    .whatsapp-popup {
+      position: relative;
+      width: min(420px, 100%);
+      background: rgba(10, 10, 10, 0.96);
+      border: 1px solid #ffffff;
+      border-radius: 28px;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+      padding: 1.5rem;
+      color: var(--fg);
+    }
+
+    .whatsapp-popup h3 {
+      margin: 0 0 0.75rem;
+      font-size: 1.5rem;
+    }
+
+    .whatsapp-chat-button {
+      position: fixed;
+      right: 1.25rem;
+      bottom: 1.25rem;
+      z-index: 40;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 3.6rem;
+      height: 3.6rem;
+      border-radius: 50%;
+      background: #25d366;
+      color: #fff;
+      text-decoration: none;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      font-size: 1.4rem;
+    }
+
+    .whatsapp-chat-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.4);
+    }
+
+    .whatsapp-chat-button::before {
+  content: "";
+  width: 1.8rem;
+  height: 1.8rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='white' d='M19.11 17.2c-.29-.14-1.72-.85-1.99-.95-.27-.1-.47-.14-.67.14-.2.29-.77.95-.95 1.14-.17.2-.35.22-.64.08-.29-.14-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.03-.17-.29-.02-.45.13-.6.13-.13.29-.35.43-.52.14-.17.19-.29.29-.48.1-.2.05-.37-.02-.52-.08-.14-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.08-.79.37-.27.29-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.14.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.35.2 1.86.12.57-.08 1.72-.7 1.96-1.37.24-.67.24-1.24.17-1.37-.07-.12-.27-.2-.56-.34z'/%3E%3Cpath fill='white' d='M16.02 3C8.84 3 3 8.74 3 15.83c0 2.5.73 4.92 2.11 7l-1.38 5.04 5.18-1.35a13.1 13.1 0 0 0 6.11 1.55h.01c7.18 0 13.02-5.74 13.02-12.83C29.04 8.74 23.2 3 16.02 3zm0 23.35h-.01a10.8 10.8 0 0 1-5.5-1.5l-.39-.23-3.07.8.82-2.98-.25-.41a10.52 10.52 0 0 1-1.62-5.57c0-5.86 4.84-10.63 10.8-10.63 5.95 0 10.8 4.77 10.8 10.63 0 5.86-4.84 10.63-10.79 10.63z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+    
+
+    .whatsapp-popup p {
+      margin: 0 1rem 1.4rem 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .whatsapp-popup .button {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .whatsapp-popup-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 999px;
+      border: 1px solid #ffffff;
+      background: rgba(0,0,0,0.6);  
+      color: var(--fg);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .hero-panel {
+      padding: 1.4rem;
+      border: 1px solid #ffffff;
+      border-radius: 28px;
+      background: rgba(255,255,255,0.03);
+      box-shadow: var(--shadow);
+      opacity: 0;
+      animation: fadeUp 0.8s ease-out 0.2s forwards;
+    }
+
+    .hero-panel h3 {
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .service-list {
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .service-item {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      padding: 0.85rem;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid #ffffff;
+      opacity: 0;
+      animation: fadeUp 0.8s ease-out 0.25s forwards;
+    }
+
+    .service-item strong {
+      font-size: 0.85rem;
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+
+    .service-item p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 0.85rem;
     }
 
     .section {
@@ -94,13 +382,16 @@
     .section-heading {
       display: flex;
       align-items: center;
+      width: 100%;
       font-size: clamp(2.7rem, 5.4vw, 4.5rem);
       font-weight: 800;
       letter-spacing: -0.08em;
       margin-bottom: 1.2rem;
       color: var(--accent);
       gap: 1rem;
-      width: 100%;
+      position: relative;
+      opacity: 0;
+      animation: fadeUp 0.8s ease-out 0.2s forwards;
     }
 
     .section-heading::before {
@@ -117,73 +408,124 @@
       content: "";
       flex: 1;
       height: 2px;
-      background: rgb(255,255,255);
+      background: rgb(255, 255, 255);
       margin-left: 1rem;
     }
 
     .cards {
       display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 1rem;
     }
 
+    .cards .card:nth-child(2) {
+      animation-delay: 0.25s;
+    }
+
+    .cards .card:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    .service-list .service-item:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+
+    .service-list .service-item:nth-child(3) {
+      animation-delay: 0.35s;
+    }
+
     .card {
-      padding: 1.6rem;
+      padding: 1.4rem;
       border-radius: 24px;
       border: 1px solid #ffffff;
       background: rgba(255,255,255,0.03);
       box-shadow: 0 24px 40px rgba(0,0,0,0.18);
-      margin-top: 1.5rem;
+      min-height: 220px;
       opacity: 0;
       animation: fadeUp 0.8s ease-out 0.2s forwards;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
     }
 
-    .card h3 {
-      margin-bottom: 1rem;
-      font-size: 1.3rem;
+    .card.horizontal {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      min-height: 180px;
     }
 
-    .card img {
-      width: 357.12px;
-      height: 929.9px;
-      object-fit: cover;
+    .card.horizontal .card-copy {
+      flex: 1;
+    }
+
+    .card.horizontal img {
+      width: 140px;
+      height: 140px;
+      flex-shrink: 0;
       border-radius: 20px;
-      display: block;
-      margin: 1rem auto;
-      max-width: 100%;
+      object-fit: cover;
+      border: 1px solid #ffffff;
+      background: rgba(255,255,255,0.04);
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      border-color: #ffffff;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.25), 0 0 0 1px rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .card h4 {
+      margin-bottom: 0.75rem;
+      font-size: 1rem;
     }
 
     .card p {
       color: var(--muted);
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
+      font-size: 0.9rem;
     }
 
-    .button,
-    .button.secondary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.85rem 1.5rem;
-      border-radius: 999px;
-      font-weight: 600;
-      border: 1px solid #ffffff;
-      transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
-      text-decoration: none;
-    }
+    .card span {
+  display: inline-flex;
+  padding: 0.5rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid #ffffff;
+  color: var(--accent);
+  font-size: 0.85rem;
+  margin-top: 1.2rem;
+}
+    .info-card {
+  min-height: auto;
+}
 
-    .button {
-      background: var(--accent);
-      color: var(--bg);
-    }
+.info-list {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
 
-    .button:hover,
-    .button.secondary:hover {
-      transform: translateY(-2px);
-    }
+.info-item {
+  padding: 1rem;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.03);
+}
 
-    .button.secondary {
-      background: transparent;
-      color: var(--fg);
-      border-color: #ffffff;
+.info-item strong {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.92rem;
+}
+
+.info-item p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+    .card .button {
+      margin-top: 1.2rem;
     }
 
     footer {
@@ -194,23 +536,30 @@
       flex-wrap: wrap;
       gap: 0.75rem;
       color: var(--muted);
-      font-size: 0.95rem;
+      font-size: 0.85rem;
     }
 
-    header {
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.5rem;
-}
+    @media (max-width: 840px) {
+
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+  }
 
   nav {
-  display: flex;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  width: auto;
-}
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    width: auto;
+  }
 
   nav a {
     margin: 0;
@@ -221,95 +570,10 @@
     font-size: 0.85rem;
   }
 
-  .container {
-    padding: 1rem 1rem 1.5rem;
-  }
-
   footer {
     flex-direction: column;
   }
-      .container {
-        padding: 1rem 0 1.5rem;
-      }
-      .hero {
-        padding: 1.5rem 0;
-      }
-      .hero-title {
-        font-size: clamp(1.9rem, 8vw, 3rem);
-      }
-      .card {
-        padding: 1.4rem;
-      }
-      .card img {
-        width: 100%;
-        height: auto;
-        max-width: 357.12px;
-      }
-      footer {
-        flex-direction: column;
-      }
 
-    @media (max-width: 480px) {
-      .section-heading {
-        font-size: clamp(1.8rem, 6vw, 2.4rem);
-        gap: 0.6rem;
-        margin-bottom: 0.9rem;
-        align-items: flex-start;
-      }
-
-      .section-heading::before {
-        width: 0.7rem;
-        height: 0.7rem;
-        min-width: 0.7rem;
-        margin-top: 0.15rem;
-      }
-
-      .section-heading::after {
-        content: "";
-        flex: 1;
-        height: 1px;
-        background: rgb(255,255,255);
-        margin-left: 0.75rem;
-        align-self: center;
-      }
-
-      .hero-title {
-        font-size: clamp(1.8rem, 8vw, 2.6rem);
-      }
-    }
-
-    @keyframes fadeInPage {
-      from {
-        opacity: 0;
-        transform: translateY(12px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(18px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .particle {
-      position: fixed;
-      width: 0.8rem;
-      height: 0.8rem;
-      background: rgba(255, 255, 255, 0.12);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: -1;
-      animation: float 10s infinite linear;
-      box-shadow: 0 0 20px rgba(255,255,255,0.08);
     }
 
     @keyframes float {
@@ -320,50 +584,201 @@
       100% { transform: translate(0, 0) rotate(360deg); }
     }
 
-    .particle:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; }
-    .particle:nth-child(2) { left: 30%; top: 40%; animation-delay: 2s; }
-    .particle:nth-child(3) { left: 50%; top: 60%; animation-delay: 4s; }
-    .particle:nth-child(4) { left: 70%; top: 30%; animation-delay: 6s; }
-    .particle:nth-child(5) { left: 90%; top: 50%; animation-delay: 8s; }
-    .particle:nth-child(6) { left: 20%; top: 70%; animation-delay: 1s; }
-    .particle:nth-child(7) { left: 60%; top: 10%; animation-delay: 3s; }
-    .particle:nth-child(8) { left: 80%; top: 80%; animation-delay: 5s; }
-    .particle:nth-child(9) { left: 5%; top: 35%; animation-delay: 7s; }
-    .particle:nth-child(10) { left: 25%; top: 55%; animation-delay: 9s; }
-    .particle:nth-child(11) { left: 45%; top: 15%; animation-delay: 0.5s; }
-    .particle:nth-child(12) { left: 65%; top: 75%; animation-delay: 2.5s; }
+    body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(255,255,255,0.03) 0px,
+      rgba(255,255,255,0.03) 1px,
+      transparent 1px,
+      transparent 32px
+    );
+
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.8),
+    transparent 60%
+  );
+
+  z-index: -2;
+}
   </style>
 </head>
 <body>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
+  <div class="whatsapp-popup-overlay" id="whatsappPopup" role="dialog" aria-modal="true" aria-labelledby="whatsappPopupTitle">
+    <div class="whatsapp-popup">
+      <button type="button" class="whatsapp-popup-close" id="whatsappPopupClose" aria-label="Tutup popup">×</button>
+      <h3 id="whatsappPopupTitle">Pesan Sekarang</h3>
+      <p>Hubungi kami melalui WhatsApp untuk memesan desain Anda. Klik tombol di bawah untuk langsung memulai chat.</p>
+      <a href="https://wa.me/62895383098720" class="button" target="_blank" rel="noopener noreferrer">Chat WhatsApp</a>
+    </div>
+  </div>
   <div class="container">
     <header>
-      <a class="brand" href="index.html">
-        <img src="https://g.top4top.io/p_380164g991.png" alt="logo with name" class="brand-logo" />
+      <a class="brand" href="#">
+        <img src="https://k.top4top.io/p_3804g8qes1.png" alt="logo" class="brand-logo" />
       </a>
     </header>
+
     <section class="hero">
-      <h1 class="hero-title">Desain Media Cetak</h1>
-      <p class="hero-text">Desain visual untuk platform media cetak Anda.</p>
+      <div>
+        <h1 class="hero-title">
+  Jasa Desain <span class="green">Murah&Cepat</span> untuk Kebutuhan Anda
+</h1>
+        <p class="hero-text">Buat pengalaman visual dengan kebutuhan anda, Kami siap membantu anda menciptakan desain untuk memenuhi kebutuhan Anda. Harga terjangkau dan hasil berkualitas.</p>
+        <div class="buttons">
+          <a href="penawaran.html" class="button">Lihat Penawaran</a>
+          <a href="#services" class="button secondary">Lihat Layanan</a>
+        </div>
+      </div>
+
+      <aside class="hero-panel">
+        <h3>Kelebihan Kami</h3>
+        <div class="service-list">
+          <div class="service-item">
+            <div>
+              <strong class="green">Harga Terjangkau</strong>
+              <p>Kami menawarkan layanan desain dengan harga yang kompetitif tanpa mengorbankan kualitas.</p>
+            </div>
+          </div>
+          <div class="service-item">
+            <div>
+              <strong class="green">Estimasi Cepat</strong>
+              <p>Kami memberikan estimasi waktu yang akurat dan memenuhi tenggat waktu yang ditentukan.</p>
+            </div>
+          </div>
+          <div class="service-item">
+            <div>
+              <strong class="green">Kebutuhan Bisnis</strong>
+              <p>Kami memahami kebutuhan bisnis Anda dan menyediakan solusi desain yang sesuai.</p>
+            </div>
+          </div>
+        </div>
+      </aside>
     </section>
 
-    <section class="section">
-      <h2 class="section-heading">Portofolio Desain</h2>
+    <section id="services" class="section">
+      <h2 class="section-heading"><strong class="green">Layanan</strong></h2>
+      <div class="cards">
+        <article class="card horizontal">
+          <div class="card-copy">
+            <h4>Desain Media Sosial</h4>
+            <p>Desain konten untuk platform media sosial yang menarik dan efektif.</p>
+            <p>Ex. Feed Instagram, Banner YouTube, etc.</p>
+            <span>Start from Rp.15.000</span>
+          </div>
+          <img src="https://a.top4top.io/p_3762mg07z2.png" alt="Contoh desain media sosial" />
+        </article>
+        <article class="card horizontal">
+          <div class="card-copy">
+            <h4>Desain Media Cetak</h4>
+            <p>Desain media cetak untuk keperluan kampanye atau promosi</p>
+            <p>Ex. Kaos, Banner, Poster, Brosur, Flyer, Katalog, etc.</p>
+            <span>Start from Rp.15.000</span>
+          </div>
+          <img src="https://l.top4top.io/p_3762ew4dc1.png" alt="Contoh desain media cetak" />
+        </article>
+        <article class="card horizontal">
+          <div class="card-copy">
+            <h4>Desain Lainnya</h4>
+            <p>Desain tambahan untuk kebutuhan visual khusus dan unik.</p>
+            <p>Ex. Logo, Splash Screen, Packaging, dll.</p>
+            <span>Start from Rp.15.000</span>
+          </div>
+          <img src="https://h.top4top.io/p_3787qzvwp1.png" alt="Contoh desain lainnya" />
+        </article>
+      </div>
+    </section>
+    
+    <section id="portfolio" class="section">
+      <h2 class="section-heading"><strong class="green">Portofolio</strong></h2>
       <div class="cards">
         <article class="card">
-          <img src="https://l.top4top.io/p_3788dk6q91.png" alt="Portofolio Desain Cetak" />
-          <a href="index.html" class="button secondary">Kembali ke Beranda</a>
+          <h4>Desain Media Sosial</h4>
+          <p>Desain konten untuk platform media sosial yang menarik dan efektif.</p>
+          <p>Ex. Feed Instagram, Banner YouTube, etc.</p>
+          <a href="sosial.html" class="button secondary">Lihat Desain Sosial</a>
+        </article>
+        <article class="card">
+          <h4>Desain Media Cetak</h4>
+          <p>Desain media cetak untuk keperluan kampanye atau promosi.</p>
+          <p>Ex. Kaos, Banner, Poster, Brosur, Flyer, Katalog, etc.</p>
+          <a href="cetak.html" class="button secondary">Lihat Desain Cetak</a>
+        </article>
+        <article class="card">
+          <h4>Desain Lainnya</h4>
+          <p>Desain yang tidak termasuk dalam kategori.</p>
+          <p>Ex. Splash Screen, Logo, etc.</p>
+          <a href="lainnya.html" class="button secondary">Lihat Desain Lainnya</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact-order" class="section">
+      <section id="services" class="section">
+    <div class="cards">
+      <article class="card info-card">
+       <h4>Informasi</h4>
+
+      <div class="info-list">
+        <div class="info-item">
+          <strong class="green">Harga Fleksibel</strong>
+          <p>
+            Harga dapat berubah tergantung tingkat kesulitan desain
+            dan detail permintaan.
+          </p>
+        </div>
+
+        <div class="info-item">
+          <strong class="green">Estimasi Pengerjaan</strong>
+          <p>
+            Waktu pengerjaan menyesuaikan kompleksitas proyek
+            dan jumlah revisi.
+          </p>
+        </div>
+
+        <div class="info-item">
+          <strong class="green">Revisi Desain</strong>
+          <p>
+            Revisi tersedia untuk memastikan hasil sesuai
+            kebutuhan Anda.
+          </p>
+        </div>
+      </div>
+
+
+      <span class="green">Information</span>
+    </article>
+  </div>
+</section>
+      <h2 class="section-heading"><strong class="green">Pemesanan</strong></h2>
+      <div class="cards">
+        <article class="card">
+          <h4>Hubungi Kami</h4>
+          <p>Kami siap membantu Anda dengan kebutuhan desain. Hubungi kami untuk konsultasi gratis dan diskusi proyek.</p>
+          <div style="margin-top: 1rem;">
+            <p style="margin-bottom: 0.5rem;"><strong>WhatsApp:</strong> +62 895 3830 98720</p>
+            <p style="margin-bottom: 0.5rem;"><strong>Instagram:</strong> @bryfx.intsomnia</p>
+            <p style="margin-bottom: 0.5rem;"><strong>TikTok:</strong> @bryfx.intsomnia</p>
+          </div>
+          <button type="button" class="button" id="whatsappOpen">Pesan Sekarang</button>
+        </article>
+        <article class="card">
+          <h4>Cara Pemesanan</h4>
+          <p>Proses pemesanan yang mudah dan cepat. Kami akan memandu Anda dari awal hingga selesai.</p>
+          <div style="margin-top: 1rem;">
+            <p style="margin-bottom: 0.5rem;"><strong>1.</strong> Konsultasi & Briefing</p>
+            <p style="margin-bottom: 0.5rem;"><strong>2.</strong> Konfirmasi Harga & Timeline</p>
+            <p style="margin-bottom: 0.5rem;"><strong>3.</strong> Pembayaran DP 50%</p>
+            <p style="margin-bottom: 0.5rem;"><strong>4.</strong> Pengerjaan & Revisi</p>
+            <p style="margin-bottom: 0.5rem;"><strong>5.</strong> Final & Pelunasan</p>
+          </div>
+          <a href="penawaran.html" class="button secondary">Lihat Penawaran</a>
         </article>
       </div>
     </section>
@@ -381,5 +796,27 @@
       </div>
     </footer>
   </div>
+  <a class="whatsapp-chat-button" href="https://wa.me/62895383098720" target="_blank" rel="noopener noreferrer" aria-label="Chat customer service via WhatsApp"></a>
+  <script>
+    const whatsappPopup = document.getElementById('whatsappPopup');
+    const whatsappOpen = document.getElementById('whatsappOpen');
+    const whatsappClose = document.getElementById('whatsappPopupClose');
+
+    function openWhatsAppPopup() {
+      whatsappPopup.classList.add('active');
+    }
+
+    function closeWhatsAppPopup() {
+      whatsappPopup.classList.remove('active');
+    }
+
+    whatsappOpen.addEventListener('click', openWhatsAppPopup);
+    whatsappClose.addEventListener('click', closeWhatsAppPopup);
+    whatsappPopup.addEventListener('click', function (event) {
+      if (event.target === whatsappPopup) {
+        closeWhatsAppPopup();
+      }
+    });
+  </script>
 </body>
 </html>
